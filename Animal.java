@@ -6,7 +6,7 @@ public class Animal
 	String gender = "N/A";
 	boolean babies = false;
 	int age = 0;
-	String animalType;
+	String type;
 
 	public Animal() {}
 
@@ -23,7 +23,7 @@ public class Animal
 	public Animal(String name, String animalType)
 	{
 		this.name = name;
-		this.animalType = animalType;
+		this.type = animalType;
 	}
 
 //Getters and Setters
@@ -82,17 +82,17 @@ public class Animal
 		return age;
 	}
 
-public String verbose()
-{
-	String verbose = "Name: "+this.name+"\nAnimal: "+this.animalType+"\n";
-	return verbose;
-}
+	public String verbose()
+	{
+		String verbose = "Name: "+this.name+"\nAnimal: "+this.animalType+"\n";
+		return verbose;
+	}
 
-public String info()	//change the name of this
-{
-	//print all info out
-	return info;
-}
+	public String info()	//change the name of this
+	{
+		//print all info out
+		return info;
+	}
 
 
 
