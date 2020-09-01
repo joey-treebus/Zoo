@@ -129,11 +129,17 @@ class ZooTest {
 
 	public static void displayAnimal(String type, String name, ArrayList<Animal> list)
 	{
+		boolean exists = false;
 		for(int i=0; i<list.size(); i++)
 		{
 			if((name.toLowerCase().equals(list.get(i).getName().toLowerCase())) && (type.toLowerCase().equals(list.get(i).getType().toLowerCase())))
+			{
 				System.put.println(list.get(i).moreInfo());
+				exists = true;
+			}
 		}
+		if(!exists)
+			System.out.println("This animal does not exist in the zoo.");
 	}
 }
 	
