@@ -16,7 +16,7 @@ public class Bird extends Animal
 
 	public Bird(String name, String type)
 	{
-		super(name,type)
+		super(name,type);
 	}
 
 	//getters and setters

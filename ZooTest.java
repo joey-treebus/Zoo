@@ -66,7 +66,7 @@ class ZooTest {
 	public static void printSummaryList(ArrayList<Animal> animals)
 	{
 
-		System.out.println("Summary: \n There are " + animals.size() + " animals in the zoo.") 
+		System.out.println("Summary: \n There are " + animals.size() + " animals in the zoo."); 
 			//count all animals and print them out
 	}
 

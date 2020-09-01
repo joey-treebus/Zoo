@@ -27,3 +27,4 @@ public class Penguin extends Bird
 	{
 		this.arctic = arctic;
 	}
+}

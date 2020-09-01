@@ -93,7 +93,7 @@ public class Animal
 		//print all info out
 		return info;
 	}
-
+}
 
 
 

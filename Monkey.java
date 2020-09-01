@@ -14,7 +14,7 @@ public class Monkey extends Mammal
 
 	public Monkey(String name, String type)
 	{
-		super(name,type)
+		super(name,type);
 	}
 
 	public boolean getOpposableThumbs()
