@@ -1,5 +1,3 @@
-package zoo.animals;
-import zoo.animals.Mammal;
 
 public class Monkey extends Mammal
 {

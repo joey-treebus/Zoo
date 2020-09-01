@@ -1,12 +1,10 @@
-package zoo.animals;
-import zoo.animals.Animal;
 
 public class Bird extends Animal
 {
 	boolean canFly = true;
 	boolean hasFeathers = true;
 
-	public Bird(String name, String conservationStatus, String diet, String gender, boolean babies, int age)
+	public Bird(String name, String conservationStatus, String diet, String gender, boolean babies, int age,boolean canFly, boolean hasFeathers)
 	{
 		super(name,conservationStatus,diet,gender,babies,age);
 		this.canFly = canFly;

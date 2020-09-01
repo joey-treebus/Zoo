@@ -1,4 +1,3 @@
-import zoo.animals.Animal;
 
 public class Mammal extends Animal
 {

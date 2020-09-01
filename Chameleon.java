@@ -1,5 +1,3 @@
-package zoo.animals;
-import zoo.animals.Reptile;
 
 public class Chameleon extends Reptile
 {

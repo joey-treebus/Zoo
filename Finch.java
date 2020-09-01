@@ -1,5 +1,3 @@
-import zoo.animals;
-import zoo.animals.Bird;
 
 public class Finch extends Bird
 {

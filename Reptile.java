@@ -1,5 +1,3 @@
-package zoo.animals;
-import zoo.animals.Animal;
 
 public class Reptile extends Animal
 {
@@ -7,7 +5,7 @@ public class Reptile extends Animal
 
 	public Reptile(String name, String conservationStatus, String diet, String gender, boolean babies, int age, boolean hasLegs)
 	{
-		super(name,conservationStatus,diet,gender,babies,age,hasLegs);
+		super(name,conservationStatus,diet,gender,babies,age);
 		this.hasLegs = hasLegs;
 		this.type = "reptile";
 	}

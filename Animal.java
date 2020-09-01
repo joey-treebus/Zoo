@@ -1,3 +1,4 @@
+
 public class Animal
 {
 	String name;
@@ -7,6 +8,7 @@ public class Animal
 	boolean babies = false;
 	int age = 0;
 	String type;
+	String info = "Name: "+this.name+"\nAnimal: "+this.type+"\nConservation Status: "+this.conservationStatus+"\nGender: "+this.gender+"\nBabies: "+this.babies+"\nAge: "+this.age;
 
 	public Animal() {}
 
@@ -37,61 +39,64 @@ public class Animal
 		this.name = name;
 	}
 
-	public String setConservationStatus(String conservationStatus)
+	public void setConservationStatus(String conservationStatus)
 	{
 		this.conservationStatus = conservationStatus;
 	}
-	public void getConservationStatus()
+	public String getConservationStatus()
 	{
 		return conservationStatus;
 	}
 
-	public String setDiet(String diet)
+	public void setDiet(String diet)
 	{
 		this.diet = diet;
 	}
-	public void getDiet()
+	public String getDiet()
 	{
 		return diet;
 	}
 
-	public String setGender(String gender)
+	public void setGender(String gender)
 	{
 		this.gender = gender;
 	}
-	public void getGender()
+	public String getGender()
 	{
 		return gender;
 	}
 
-	public boolean setBabies(boolean babies)
+	public void setBabies(boolean babies)
 	{
 		this.babies = babies;
 	}
-	public void getBabies()
+	public boolean getBabies()
 	{
 		return babies;
 	}
 
-	public int setAge(int age)
+	public void setAge(int age)
 	{
 		this.age = age;
 	}
-	public void getAge()
+	public int getAge()
 	{
 		return age;
 	}
 
 	public String verbose()
 	{
-		String verbose = "Name: "+this.name+"\nAnimal: "+this.animalType+"\n";
+		String verbose = "Name: "+this.name+"\nAnimal: "+this.type+"\n";
 		return verbose;
 	}
 
-	public String info()	//change the name of this
+	public String info()
 	{
-		//print all info out
 		return info;
+	}
+	public String getType()
+	{
+		return type;
 	}
 }
 

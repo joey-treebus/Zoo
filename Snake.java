@@ -1,14 +1,12 @@
-package zoo.animals;
-import zoo.animals.Reptile;
 
 public class Snake extends Reptile
 {
-	boolean poisonous;
+	boolean poisonous = true;
 
 	public Snake(String name, String conservationStatus, String diet, String gender, boolean babies, int age, boolean hasLegs, boolean poisonous)
 	{
-		super(name,conservationStatus,diet,gender,babies,age,hasLegs,poisonous);
-		this.poisonous = poisonous;
+		super(name,conservationStatus,diet,gender,babies,age,hasLegs);
+		this.poisonous = true;
 		this.type = "snake";
 	}
 

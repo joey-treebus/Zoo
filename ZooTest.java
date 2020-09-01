@@ -1,6 +1,7 @@
+import java.io.*;
 import java.util.Scanner;
 import java.util.ArrayList;
-
+import java.util.*;
 
 
 class ZooTest {
@@ -12,12 +13,8 @@ class ZooTest {
 	{
 		ArrayList<Animal> animalList = new ArrayList<Animal>();
 
-		try
-		{
-			animalList = setupAnimals();
-		}catch(Exception ex){
-			System.out.println("Exception Caught");
-		}
+		
+		animalList = setupAnimals();
 		
 		printVerboseList(animalList);
 
@@ -26,12 +23,13 @@ class ZooTest {
 		{
 	
 			printSummaryList(animalList);
-			System.out.println("Options: \n \n Add animal(add) \n Delete animal (delete) \n Display animal (display)");
-			String input = myObj.nextline();
-			System.out.println("What type of animal would you like to "+input+"?");
-			String type = myObj.nextline();
-			System.out.println("What is the name of the "+type+"?");
-			String name = myObj.nextline();
+			Scanner sc = new Scanner(System.in);
+			System.out.println("Options: \n \n Add animal(add) \n Delete animal (delete) \n Display animal (display)\n");
+			input = sc.nextLine();
+			System.out.println("What type of animal would you like to "+input+"? ");
+			String type = sc.nextLine();
+			System.out.println("What is the name of the "+type+"? ");
+			String name = sc.nextLine();
 
 			switch (input){
 				case "add":
@@ -53,21 +51,66 @@ class ZooTest {
 	public static ArrayList<Animal> setupAnimals() 
 	{
 		ArrayList<Animal> animals = new ArrayList<Animal>();
-		addAnimal("Maggie","monkey",animals);
-		addAnimal("Cathy","cat",animals);
-		addAnimal("Carl","chameleon",animals);
-		addAnimal("Susan","snake",animals);
-		addAnimal("Felipe","finch",animals);
-		addAnimal("Paul","Penguin",animals);
+		addAnimal("monkey","Maggie",animals);
+		addAnimal("cat","Cathy",animals);
+		addAnimal("chameleon","Carl",animals);
+		addAnimal("snake","Susan",animals);
+		addAnimal("finch","Felipe",animals);
+		addAnimal("penguin","Paul",animals);
+
 		
+		System.out.println("added");
 		return animals;
 	}
 		
 	public static void printSummaryList(ArrayList<Animal> animals)
 	{
+		int monkeys = 0;
+		int cats = 0;
+		int chameleons = 0;
+		int snakes = 0;
+		int finches = 0;
+		int penguins = 0;
+		int total = 0;
 
-		System.out.println("Summary: \n There are " + animals.size() + " animals in the zoo."); 
-			//count all animals and print them out
+		for(int i=0; i<animals.size(); i++)
+		{
+			if(animals.get(i) instanceof Monkey){
+				monkeys++;
+				total++;
+			}
+			if(animals.get(i) instanceof Cat){
+				cats++;
+				total++;
+			}
+			if(animals.get(i) instanceof Chameleon){
+				chameleons++;
+				total++;
+			}
+			if(animals.get(i) instanceof Snake){
+				snakes++;
+				total++;
+			}
+			if(animals.get(i) instanceof Finch){
+				finches++;
+				total++;
+			}
+			if(animals.get(i) instanceof Penguin){
+				penguins++;
+				total++;
+			}
+		}
+
+		System.out.println("\nSummary:");
+		System.out.println("There are " +total+ " animals in the zoo.");
+		System.out.println(monkeys+" Monkeys");
+		System.out.println(cats+" Cats");
+		System.out.println(chameleons+" Chameleons");
+		System.out.println(snakes+" Snakes");
+		System.out.println(finches+" Finches");
+		System.out.println(penguins+" Penguins");
+		System.out.println("");
+			
 	}
 
 	public static void printVerboseList(ArrayList<Animal> animals)
@@ -75,7 +118,7 @@ class ZooTest {
 		System.out.println("\nVerbose List:");
 		for(int i=0;i<animals.size();i++)
 		{
-			//print out name and species
+			System.out.println((i+1)+". "+animals.get(i).verbose());
 		}
 	}
 
@@ -134,7 +177,7 @@ class ZooTest {
 		{
 			if((name.toLowerCase().equals(list.get(i).getName().toLowerCase())) && (type.toLowerCase().equals(list.get(i).getType().toLowerCase())))
 			{
-				System.put.println(list.get(i).moreInfo());
+				System.out.println(list.get(i).info());
 				exists = true;
 			}
 		}
