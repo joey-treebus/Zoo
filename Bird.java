@@ -9,7 +9,7 @@ public class Bird extends Animal
 		super(name,conservationStatus,diet,gender,babies,age);
 		this.canFly = canFly;
 		this.hasFeathers = hasFeathers;
-		this.type = "bird";
+		this.type = "Bird";
 	}
 
 	public Bird(String name, String type)
@@ -34,6 +34,12 @@ public class Bird extends Animal
 	public void setFeathers(boolean hasFeathers)
 	{
 		this.hasFeathers = hasFeathers;
+	}
+
+	@Override
+	public void print()
+	{
+		System.out.println("Bird");
 	}
 }
 

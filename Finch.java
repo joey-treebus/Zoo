@@ -1,3 +1,4 @@
+import java.util.*;
 
 public class Finch extends Bird
 {
@@ -7,7 +8,7 @@ public class Finch extends Bird
 	{
 		super(name,conservationStatus,diet,gender,babies,age,canFly,hasFeathers);
 		this.smallBeak = smallBeak;
-		this.type = "finch";
+		this.type = "Finch";
 	}
 
 	public Finch(String name, String type)
@@ -21,9 +22,18 @@ public class Finch extends Bird
 		return smallBeak;
 	}
 
-	public void setBeak(boolean smallBeak)
+	public void setBeak()
 	{
+		Scanner s = new Scanner(System.in);
+		System.out.println("Does "+name+" have a small beak?(true/false)");
+		boolean smallBeak = Boolean.parseBoolean(s.nextLine());
 		this.smallBeak = smallBeak;
+	}
+
+	@Override
+	public void print()
+	{
+		System.out.println("Fly: "+getFly()+"\nFeathers: "+getFeathers()+"\nSmall Beak: "+getBeak());
 	}
 
 }

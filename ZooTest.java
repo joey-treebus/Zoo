@@ -65,12 +65,6 @@ class ZooTest {
 		animals.add(new Snake("Susan","Snake","safe","female",true,12,false,true));
 		animals.add(new Finch("Felipe","Finch","safe","male",false,1,true,true,true));
 		animals.add(new Penguin("Paul","Penguin","endangered","male",false,6,false,false,true));
-		/*addAnimal("Monkey","Maggie",animals);
-		addAnimal("Cat","Cathy",animals);
-		addAnimal("Chameleon","Carl",animals);
-		addAnimal("Snake","Susan",animals);
-		addAnimal("Finch","Felipe",animals);
-		addAnimal("Penguin","Paul",animals);*/
 
 		return animals;
 	}
@@ -141,23 +135,50 @@ class ZooTest {
 		Scanner sc = new Scanner(System.in);
 		
 		if(type.toLowerCase().equals("monkey"))
+		{
 			a = new Monkey(name,type);
+			((Mammal)a).setLiveInTree(true);
+			((Monkey)a).setOpposableThumbs();
+		}
 		else if(type.toLowerCase().equals("cat"))
+		{
 			a = new Cat(name,type);
+			((Mammal)a).setLiveInTree(false);
+			((Cat)a).setSpots();
+		}
 		else if(type.toLowerCase().equals("chameleon"))
+		{
 			a = new Chameleon(name,type);
+			((Reptile)a).setLegs(true);
+			((Chameleon)a).setColor();
+		}
 		else if(type.toLowerCase().equals("snake"))
+		{
 			a = new Snake(name,type);
+			((Reptile)a).setLegs(false);
+			((Snake)a).setPoison();
+		}
 		else if(type.toLowerCase().equals("finch"))
+		{
 			a = new Finch(name,type);
+			((Bird)a).setFly(true);
+			((Bird)a).setFeathers(true);
+			((Finch)a).setBeak();
+		}
 		else if(type.toLowerCase().equals("penguin"))
+		{
 			a = new Penguin(name,type);
+			((Bird)a).setFly(false);
+			((Bird)a).setFeathers(false);
+			((Penguin)a).setArctic();
+		}
 		else
 		{
 			System.out.println("We do not accept the "+type+" animal in the zoo");
 			return list;
 		}
-
+	
+		//Setting up the general characteristics
 		System.out.println("Is "+name+" male or female?");
 		String g = sc.nextLine();
 		if(g.toLowerCase().equals("female"))
@@ -206,6 +227,7 @@ class ZooTest {
 	public static void displayAnimal(String type, String name, ArrayList<Animal> list)
 	{
 		boolean exists = false;
+		Animal a = new Animal();
 		for(int i=0; i<list.size(); i++)
 		{
 			if((name.toLowerCase().equals(list.get(i).getName().toLowerCase())) && (type.toLowerCase().equals(list.get(i).getType().toLowerCase())))
@@ -216,6 +238,7 @@ class ZooTest {
 				System.out.println("Gender: "+list.get(i).getGender());
 				System.out.println("Babies: "+list.get(i).getBabies());
 				System.out.println("Age: "+list.get(i).getAge());
+				list.get(i).print();
 				exists = true;
 			}
 		}

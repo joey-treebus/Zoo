@@ -7,7 +7,7 @@ public class Mammal extends Animal
 	{
 			super(name, conservationStatus, diet, gender, babies, age);
 			this.liveInTree = liveInTree;
-			this.type = "mammal";
+			this.type = "Mammal";
 	}
 
 	public Mammal(String name, String animalType)
@@ -23,6 +23,12 @@ public class Mammal extends Animal
 	public void setLiveInTree(boolean liveInTree)
 	{
 		this.liveInTree = liveInTree;
+	}
+
+	@Override
+	public void print()
+	{
+		System.out.println("Mammal");
 	}
 }
 	

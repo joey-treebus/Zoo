@@ -89,14 +89,14 @@ public class Animal
 		String verbose = (this.name+" "+this.type);
 		return verbose;
 	}
-
-	/*public String info()
-	{
-		return info;
-	}*/
 	public String getType()
 	{
 		return type;
+	}
+
+	public void print()
+	{
+		System.out.println("Animal");
 	}
 }
 

@@ -1,3 +1,4 @@
+import java.util.*;
 
 public class Cat extends Mammal
 {
@@ -7,7 +8,7 @@ public class Cat extends Mammal
 	{
 		super(name,conservationStatus,diet,gender,babies,age,liveInTree);
 		this.hasSpots = hasSpots;
-		this.type = "cat";
+		this.type = "Cat";
 	}
 
 	public Cat(String name, String type)
@@ -21,8 +22,17 @@ public class Cat extends Mammal
 		return hasSpots;
 	}
 
-	public void setSpots(boolean hasSpots)
+	public void setSpots()
 	{
+		Scanner s = new Scanner(System.in);
+		System.out.println("Does "+this.name+" have spots?(true/false)");
+		boolean hasSpots = Boolean.parseBoolean(s.nextLine());
 		this.hasSpots = hasSpots;
+	}
+
+	@Override
+	public void print()
+	{
+		System.out.println("Lives in a Tree: "+getLiveInTree()+"\nSpots: "+getSpots());
 	}
 }

@@ -1,3 +1,4 @@
+import java.util.*;
 
 public class Monkey extends Mammal
 {
@@ -8,7 +9,7 @@ public class Monkey extends Mammal
 		super(name,conservationStatus,diet,gender,babies,age,livesInTree);
 		this.conservationStatus = "safe";
 		this.opposableThumbs = true;
-		this.type = "monkey";
+		this.type = "Monkey";
 	}
 
 	public Monkey(String name, String type)
@@ -20,8 +21,17 @@ public class Monkey extends Mammal
 	{
 		return opposableThumbs;
 	}
-	public void setOpposableThumbs(boolean opposableThumbs)
+	public void setOpposableThumbs()
 	{
+		Scanner s = new Scanner(System.in);
+		System.out.println("Does "+this.name+" have opposable thumbs? (true/false)");
+		boolean opposableThumbs = Boolean.parseBoolean(s.nextLine());
 		this.opposableThumbs = opposableThumbs;
+	}
+	
+	@Override
+	public void print()
+	{
+		System.out.println("Lives in Tree: "+getLiveInTree()+"\nOpposable Thumbs: "+getOpposableThumbs());
 	}
 }
