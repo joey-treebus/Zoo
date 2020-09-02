@@ -6,6 +6,7 @@ public class Monkey extends Mammal
 	public Monkey(String name, String conservationStatus, String diet, String gender, boolean babies, int age, boolean livesInTree, boolean opposableThumbs)
 	{
 		super(name,conservationStatus,diet,gender,babies,age,livesInTree);
+		this.conservationStatus = "safe";
 		this.opposableThumbs = true;
 		this.type = "monkey";
 	}

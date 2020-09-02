@@ -8,7 +8,7 @@ public class Animal
 	boolean babies = false;
 	int age = 0;
 	String type;
-	String info = "Name: "+this.name+"\nAnimal: "+this.type+"\nConservation Status: "+this.conservationStatus+"\nGender: "+this.gender+"\nBabies: "+this.babies+"\nAge: "+this.age;
+	//String info = "Name: "+this.name+"\nAnimal: "+this.type+"\nConservation Status: "+this.conservationStatus+"\nGender: "+this.gender+"\nBabies: "+this.babies+"\nAge: "+this.age;
 
 	public Animal() {}
 
@@ -86,14 +86,14 @@ public class Animal
 
 	public String verbose()
 	{
-		String verbose = "Name: "+this.name+"\nAnimal: "+this.type+"\n";
+		String verbose = (this.name+" "+this.type);
 		return verbose;
 	}
 
-	public String info()
+	/*public String info()
 	{
 		return info;
-	}
+	}*/
 	public String getType()
 	{
 		return type;

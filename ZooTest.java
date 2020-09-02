@@ -13,7 +13,6 @@ class ZooTest {
 	{
 		ArrayList<Animal> animalList = new ArrayList<Animal>();
 
-		
 		animalList = setupAnimals();
 		
 		printVerboseList(animalList);
@@ -24,26 +23,34 @@ class ZooTest {
 	
 			printSummaryList(animalList);
 			Scanner sc = new Scanner(System.in);
-			System.out.println("Options: \n \n Add animal(add) \n Delete animal (delete) \n Display animal (display)\n");
+			System.out.println("Options: \n Add animal(add) \n Delete animal (delete) \n Display animal (display) \n Leave Zoo (exit)");
 			input = sc.nextLine();
-			System.out.println("What type of animal would you like to "+input+"? ");
-			String type = sc.nextLine();
-			System.out.println("What is the name of the "+type+"? ");
-			String name = sc.nextLine();
+			System.out.println(input);
+			if(input.toLowerCase().equals("exit"))
+					break;
+			if(input.toLowerCase().equals("add") || input.toLowerCase().equals("delete") || input.toLowerCase().equals("display"))
+			{
+				System.out.println("What type of animal would you like to "+input+"? ");
+				String type = sc.nextLine();
+				System.out.println("What is the name of the "+type+"? ");
+				String name = sc.nextLine();
 
-			switch (input){
-				case "add":
-					animalList = addAnimal(type,name,animalList);
-					break;
-				case "delete":
-					animalList = deleteAnimal(type,name,animalList);
-					break;
-				case "display":
-					displayAnimal(type,name,animalList);
-					break;
-				default:
-					System.exit(1);
+				switch (input){
+					case "add":
+						animalList = addAnimal(type,name,animalList);
+						break;
+					case "delete":
+						animalList = deleteAnimal(type,name,animalList);
+						break;
+					case "display":
+						displayAnimal(type,name,animalList);
+						break;
+					default:
+						System.exit(1);
+				}	
 			}
+			else
+				System.out.println("Please choose a valid action. Try again");
 		}
 		System.out.println("Thanks for visiting the Zoo!");		
 	}
@@ -51,15 +58,20 @@ class ZooTest {
 	public static ArrayList<Animal> setupAnimals() 
 	{
 		ArrayList<Animal> animals = new ArrayList<Animal>();
-		addAnimal("monkey","Maggie",animals);
-		addAnimal("cat","Cathy",animals);
-		addAnimal("chameleon","Carl",animals);
-		addAnimal("snake","Susan",animals);
-		addAnimal("finch","Felipe",animals);
-		addAnimal("penguin","Paul",animals);
+		//hard coded way to set up the zoo initially
+		animals.add(new Monkey("Maggie","Monkey","safe","female",true,6,true,true));
+		animals.add(new Cat("Cathy","Cat","endangered","female",false,8,false,true));
+		animals.add(new Chameleon("Carl","Chameleon","safe","male",false,3,true,true));
+		animals.add(new Snake("Susan","Snake","safe","female",true,12,false,true));
+		animals.add(new Finch("Felipe","Finch","safe","male",false,1,true,true,true));
+		animals.add(new Penguin("Paul","Penguin","endangered","male",false,6,false,false,true));
+		/*addAnimal("Monkey","Maggie",animals);
+		addAnimal("Cat","Cathy",animals);
+		addAnimal("Chameleon","Carl",animals);
+		addAnimal("Snake","Susan",animals);
+		addAnimal("Finch","Felipe",animals);
+		addAnimal("Penguin","Paul",animals);*/
 
-		
-		System.out.println("added");
 		return animals;
 	}
 		
@@ -109,49 +121,68 @@ class ZooTest {
 		System.out.println(snakes+" Snakes");
 		System.out.println(finches+" Finches");
 		System.out.println(penguins+" Penguins");
-		System.out.println("");
-			
 	}
 
 	public static void printVerboseList(ArrayList<Animal> animals)
 	{
 		System.out.println("\nVerbose List:");
+		String a = "Animal";
+		String n = "Name";
+		System.out.printf("   %-10s %-10s %n",a,n);
 		for(int i=0;i<animals.size();i++)
 		{
-			System.out.println((i+1)+". "+animals.get(i).verbose());
+			System.out.printf((i+1)+". %-10s %-10s %n",animals.get(i).getType(),animals.get(i).getName());
 		}
 	}
-
-	/*Animal [] checkAnimalInput(String input, Animal [] animals){
-		
-		System.out.println("Please enter an animal: ");
-
-		Scanner myObj = new Scanner(System.in);
-		String input = myObj.nextLine();
-	
-		for (int i = 1; i <= animals.size(); i++){
-			if (input != animals[i]){
-				System.out.println("Error. Animal is not in zoo.");
-			}
-		}
-	}*/
 
 	public static ArrayList<Animal> addAnimal(String type, String name, ArrayList<Animal> list)
 	{
 		Animal a = new Animal();
+		Scanner sc = new Scanner(System.in);
 		
-		if(type.equals("monkey"))
+		if(type.toLowerCase().equals("monkey"))
 			a = new Monkey(name,type);
-		else if(type.equals("cat"))
+		else if(type.toLowerCase().equals("cat"))
 			a = new Cat(name,type);
-		else if(type.equals("chameleon"))
+		else if(type.toLowerCase().equals("chameleon"))
 			a = new Chameleon(name,type);
-		else if(type.equals("snake"))
+		else if(type.toLowerCase().equals("snake"))
 			a = new Snake(name,type);
-		else if(type.equals("finch"))
+		else if(type.toLowerCase().equals("finch"))
 			a = new Finch(name,type);
-		else if(type.equals("penguin"))
+		else if(type.toLowerCase().equals("penguin"))
 			a = new Penguin(name,type);
+		else
+		{
+			System.out.println("We do not accept the "+type+" animal in the zoo");
+			return list;
+		}
+
+		System.out.println("Is "+name+" male or female?");
+		String g = sc.nextLine();
+		if(g.toLowerCase().equals("female"))
+		{
+			a.setGender("female");
+			System.out.println("Does "+name+" have any babies?(yes/no)");
+			String b = sc.nextLine();
+			if(b.toLowerCase().equals("yes"))
+					a.setBabies(true);
+			else
+				a.setBabies(false);
+		}
+		else if(g.toLowerCase().equals("male"))
+		{
+				a.setGender("male");
+				a.setBabies(false);
+		}
+		else
+			a.setGender("unknown");
+
+		System.out.println("What is the age of "+name+" the "+type);
+		int AGE = Integer.parseInt(sc.nextLine());
+		a.setAge(AGE);
+
+		
 		list.add(a);
 		return list;
 	}
@@ -164,8 +195,10 @@ class ZooTest {
 			{
 				list.remove(i);
 				System.out.println(name+" the "+type+" has been removed.");
+				return list;
 			}
 		}
+		System.out.println(name+" the "+type+" does not exist in the zoo");
 		return list;
 
 	}
@@ -177,7 +210,12 @@ class ZooTest {
 		{
 			if((name.toLowerCase().equals(list.get(i).getName().toLowerCase())) && (type.toLowerCase().equals(list.get(i).getType().toLowerCase())))
 			{
-				System.out.println(list.get(i).info());
+				System.out.println("\nName: "+list.get(i).getName());
+				System.out.println("Animal: "+list.get(i).getType());
+				System.out.println("Conservation Status: "+list.get(i).getConservationStatus());
+				System.out.println("Gender: "+list.get(i).getGender());
+				System.out.println("Babies: "+list.get(i).getBabies());
+				System.out.println("Age: "+list.get(i).getAge());
 				exists = true;
 			}
 		}
