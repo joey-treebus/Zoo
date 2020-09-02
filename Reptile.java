@@ -3,9 +3,9 @@ public class Reptile extends Animal
 {
 	boolean hasLegs;
 
-	public Reptile(String name, String conservationStatus, String diet, String gender, boolean babies, int age, boolean hasLegs)
+	public Reptile(String name, String type, String conservationStatus, String gender, boolean babies, int age, boolean hasLegs)
 	{
-		super(name,conservationStatus,diet,gender,babies,age);
+		super(name,type,conservationStatus,gender,babies,age);
 		this.hasLegs = hasLegs;
 		this.type = "Reptile";
 	}

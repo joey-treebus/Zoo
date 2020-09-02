@@ -4,9 +4,9 @@ public class Bird extends Animal
 	boolean canFly = true;
 	boolean hasFeathers = true;
 
-	public Bird(String name, String conservationStatus, String diet, String gender, boolean babies, int age,boolean canFly, boolean hasFeathers)
+	public Bird(String name, String type, String conservationStatus, String gender, boolean babies, int age,boolean canFly, boolean hasFeathers)
 	{
-		super(name,conservationStatus,diet,gender,babies,age);
+		super(name,type,conservationStatus,gender,babies,age);
 		this.canFly = canFly;
 		this.hasFeathers = hasFeathers;
 		this.type = "Bird";

@@ -7,6 +7,7 @@ public class Snake extends Reptile
 	public Snake(String name, String type, String conservationStatus, String gender, boolean babies, int age, boolean hasLegs, boolean poisonous)
 	{
 		super(name,type,conservationStatus,gender,babies,age,hasLegs);
+		this.conservationStatus = "safe";
 		this.poisonous = true;
 		this.type = "snake";
 	}

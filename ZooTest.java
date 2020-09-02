@@ -23,13 +23,18 @@ class ZooTest {
 	
 			printSummaryList(animalList);
 			Scanner sc = new Scanner(System.in);
-			System.out.println("Options: \n Add animal(add) \n Delete animal (delete) \n Display animal (display) \n Leave Zoo (exit)");
+			System.out.println("Options: \n Add animal(add) \n Delete animal (delete) \n Display animal (display) \n Display All Animals (verbose)\n Leave Zoo (exit)");
 			input = sc.nextLine();
-			System.out.println(input);
 			if(input.toLowerCase().equals("exit"))
 					break;
+			if(input.toLowerCase().equals("verbose"))
+			{
+				printVerboseList(animalList);
+				continue;
+			}
 			if(input.toLowerCase().equals("add") || input.toLowerCase().equals("delete") || input.toLowerCase().equals("display"))
 			{
+				
 				System.out.println("What type of animal would you like to "+input+"? ");
 				String type = sc.nextLine();
 				System.out.println("What is the name of the "+type+"? ");

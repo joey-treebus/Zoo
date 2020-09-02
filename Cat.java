@@ -4,10 +4,11 @@ public class Cat extends Mammal
 {
 	boolean hasSpots = true;
 
-	public Cat(String name, String conservationStatus,String diet, String gender, boolean babies, int age, boolean liveInTree, boolean hasSpots)
+	public Cat(String name, String type, String conservationStatus, String gender, boolean babies, int age, boolean liveInTree, boolean hasSpots)
 	{
-		super(name,conservationStatus,diet,gender,babies,age,liveInTree);
+		super(name,type,conservationStatus,gender,babies,age,liveInTree);
 		this.hasSpots = hasSpots;
+		this.conservationStatus = "endangered";
 		this.type = "Cat";
 	}
 

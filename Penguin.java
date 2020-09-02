@@ -4,11 +4,12 @@ public class Penguin extends Bird
 {
 	boolean arctic;
 
-	public  Penguin(String name, String conservationStatus, String diet, String gender, boolean babies, int age, boolean canFly, boolean hasFeathers,boolean arctic)
+	public  Penguin(String name, String type, String conservationStatus, String gender, boolean babies, int age, boolean canFly, boolean hasFeathers,boolean arctic)
 	{
-		super(name,conservationStatus,diet,gender,babies,age,canFly,hasFeathers);
+		super(name,type,conservationStatus,gender,babies,age,canFly,hasFeathers);
 		this.arctic = arctic;
 		this.type = "Penguin";
+		this.conservationStatus = "endangered";
 	}
 
 	public Penguin(String name, String type)

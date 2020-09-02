@@ -4,9 +4,9 @@ public class Monkey extends Mammal
 {
 	boolean opposableThumbs = true;
 	
-	public Monkey(String name, String conservationStatus, String diet, String gender, boolean babies, int age, boolean livesInTree, boolean opposableThumbs)
+	public Monkey(String name, String type, String conservationStatus, String gender, boolean babies, int age, boolean livesInTree, boolean opposableThumbs)
 	{
-		super(name,conservationStatus,diet,gender,babies,age,livesInTree);
+		super(name,type,conservationStatus,gender,babies,age,livesInTree);
 		this.conservationStatus = "safe";
 		this.opposableThumbs = true;
 		this.type = "Monkey";

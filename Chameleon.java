@@ -3,11 +3,12 @@ public class Chameleon extends Reptile
 {
 	boolean color = false;
 
-	public Chameleon(String name, String conservationStatus, String diet, String gender, boolean babies, int age, boolean hasLegs, boolean color)
+	public Chameleon(String name, String type, String conservationStatus, String gender, boolean babies, int age, boolean hasLegs, boolean color)
 	{
-		super(name,conservationStatus,diet,gender,babies,age,hasLegs);
+		super(name,type,conservationStatus,gender,babies,age,hasLegs);
 		this.color = color;
 		this.type = "Chameleon";
+		this.conservationStatus = "safe";
 	}
 
 	public Chameleon(String name, String type)

@@ -3,9 +3,9 @@ public class Mammal extends Animal
 {
 	boolean liveInTree = true;
 
-	public Mammal(String name, String conservationStatus, String diet, String gender, boolean babies, int age, boolean liveInTree)
+	public Mammal(String name, String type, String conservationStatus, String gender, boolean babies, int age, boolean liveInTree)
 	{
-			super(name, conservationStatus, diet, gender, babies, age);
+			super(name, type, conservationStatus, gender, babies, age);
 			this.liveInTree = liveInTree;
 			this.type = "Mammal";
 	}

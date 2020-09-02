@@ -3,20 +3,18 @@ public class Animal
 {
 	String name;
 	String conservationStatus = "N/A";
-	String diet = "N/A";
 	String gender = "N/A";
 	boolean babies = false;
 	int age = 0;
 	String type;
-	//String info = "Name: "+this.name+"\nAnimal: "+this.type+"\nConservation Status: "+this.conservationStatus+"\nGender: "+this.gender+"\nBabies: "+this.babies+"\nAge: "+this.age;
 
 	public Animal() {}
 
-	public Animal(String name, String conservationStatus, String diet, String gender, boolean babies, int age)
+	public Animal(String name, String type, String conservationStatus, String gender, boolean babies, int age)
 	{
 		this.name = name;
+		this.type = type;
 		this.conservationStatus = conservationStatus;
-		this.diet = diet;
 		this.gender = gender;
 		this.babies = babies;
 		this.age = age;
@@ -46,15 +44,6 @@ public class Animal
 	public String getConservationStatus()
 	{
 		return conservationStatus;
-	}
-
-	public void setDiet(String diet)
-	{
-		this.diet = diet;
-	}
-	public String getDiet()
-	{
-		return diet;
 	}
 
 	public void setGender(String gender)

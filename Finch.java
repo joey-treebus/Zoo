@@ -4,11 +4,12 @@ public class Finch extends Bird
 {
 	boolean smallBeak = true;
 
-	public Finch(String name, String conservationStatus, String diet, String gender, boolean babies, int age, boolean canFly, boolean hasFeathers, boolean smallBeak)
+	public Finch(String name, String type, String conservationStatus, String gender, boolean babies, int age, boolean canFly, boolean hasFeathers, boolean smallBeak)
 	{
-		super(name,conservationStatus,diet,gender,babies,age,canFly,hasFeathers);
+		super(name,type,conservationStatus,gender,babies,age,canFly,hasFeathers);
 		this.smallBeak = smallBeak;
 		this.type = "Finch";
+		this.conservationStatus = "safe";
 	}
 
 	public Finch(String name, String type)
